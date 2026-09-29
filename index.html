@@ -53,8 +53,6 @@
 
         <div class="mp-header-top">
 
-            <!-- Location -->
-
             <div class="mp-location">
 
                 <div class="mp-location-title">
@@ -68,34 +66,24 @@
                 </div>
 
                 <div class="mp-location-address">
-
                     Dharmyug Society, Vyara, Gujarat
-
                 </div>
 
             </div>
 
 
-            <!-- Store Logo -->
-
             <div class="mp-store-logo">
-
                 M<br>
                 PH
-
             </div>
 
-
-            <!-- Menu -->
 
             <button
                 type="button"
                 class="mp-menu"
                 aria-label="Open menu"
             >
-
                 ☰
-
             </button>
 
         </div>
@@ -126,19 +114,6 @@
 
                 <span>
                     Delivery above ₹299
-                </span>
-
-            </div>
-
-
-            <div class="mp-delivery-item">
-
-                <strong>
-                    ✓ Fresh
-                </strong>
-
-                <span>
-                    Quality Products
                 </span>
 
             </div>
@@ -182,6 +157,7 @@
         </div>
 
     </header>
+
 
 
     <!-- =====================================================
@@ -349,209 +325,12 @@
         </section>
 
 
-        <!-- =================================================
-             HERO
-        ================================================== -->
-
-        <section class="mp-hero">
-
-            <div class="mp-hero-content">
-
-                <div class="mp-hero-small">
-                    MAMRA PAUVA HOUSE
-                </div>
-
-                <h1>
-                    Your Daily<br>
-                    Grocery Partner
-                </h1>
-
-                <p>
-                    Fresh groceries and everyday essentials
-                    delivered to your doorstep.
-                </p>
-
-                <a
-                    href="#"
-                    class="mp-hero-button"
-                >
-                    SHOP NOW →
-                </a>
-
-            </div>
-
-
-            <div class="mp-hero-icon">
-                🛍️
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             OFFERS
-        ================================================== -->
-
-        <section class="mp-offer-section">
-
-            <div class="mp-section-head">
-
-                <h2 class="mp-section-title">
-                    Today's Offers
-                </h2>
-
-                <a
-                    href="#"
-                    class="mp-view-all"
-                >
-                    See All
-                </a>
-
-            </div>
-
-
-            <div class="mp-offers">
-
-
-                <div class="mp-offer">
-
-                    <div class="mp-offer-title">
-                        Flat ₹50<br>
-                        OFF
-                    </div>
-
-                    <div class="mp-offer-sub">
-                        On orders above ₹499
-                    </div>
-
-                    <div class="mp-offer-icon">
-                        💰
-                    </div>
-
-                </div>
-
-
-                <div class="mp-offer">
-
-                    <div class="mp-offer-title">
-                        Fresh<br>
-                        Everyday
-                    </div>
-
-                    <div class="mp-offer-sub">
-                        Quality you can trust
-                    </div>
-
-                    <div class="mp-offer-icon">
-                        🥬
-                    </div>
-
-                </div>
-
-
-                <div class="mp-offer">
-
-                    <div class="mp-offer-title">
-                        Snacks<br>
-                        From ₹10
-                    </div>
-
-                    <div class="mp-offer-sub">
-                        Shop now
-                    </div>
-
-                    <div class="mp-offer-icon">
-                        🍿
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             QUICK LINKS
-        ================================================== -->
-
-        <section class="mp-quick-links">
-
-
-            <a
-                href="#"
-                class="mp-quick-link"
-            >
-
-                <div class="mp-quick-icon">
-                    ⚡
-                </div>
-
-                <span>
-                    Fast Delivery
-                </span>
-
-            </a>
-
-
-            <a
-                href="#"
-                class="mp-quick-link"
-            >
-
-                <div class="mp-quick-icon">
-                    💰
-                </div>
-
-                <span>
-                    Best Offers
-                </span>
-
-            </a>
-
-
-            <a
-                href="#"
-                class="mp-quick-link"
-            >
-
-                <div class="mp-quick-icon">
-                    🥬
-                </div>
-
-                <span>
-                    Fresh Items
-                </span>
-
-            </a>
-
-
-            <a
-                href="#"
-                class="mp-quick-link"
-            >
-
-                <div class="mp-quick-icon">
-                    📞
-                </div>
-
-                <span>
-                    Contact Us
-                </span>
-
-            </a>
-
-
-        </section>
-
 
         <!-- =================================================
              POPULAR PRODUCTS
         ================================================== -->
 
         <section class="mp-product-section">
-
 
             <div class="mp-section-head">
 
@@ -572,9 +351,14 @@
             <div class="mp-products">
 
 
-                <!-- Product 1 -->
+                <!-- =================================================
+                     PRODUCT 1 - MAMRA POHA
+                ================================================== -->
 
-                <article class="mp-product">
+                <article
+                    class="mp-product"
+                    data-product="Mamra Poha"
+                >
 
                     <div class="mp-product-image">
 
@@ -585,6 +369,7 @@
                         <button
                             type="button"
                             class="mp-wishlist"
+                            aria-label="Add Mamra Poha to wishlist"
                         >
                             ♡
                         </button>
@@ -600,21 +385,61 @@
                             Mamra Poha
                         </div>
 
-                        <div class="mp-product-size">
-                            500 g
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="250 g"
+                                data-price="25"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="500 g"
+                                data-price="50"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="1 kg"
+                                data-price="100"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Mamra Poha"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
 
-                                ₹55
+                                <span class="mp-current-price">
+                                    ₹50
+                                </span>
 
                                 <span class="mp-old-price">
                                     ₹65
                                 </span>
 
                             </div>
+
 
                             <button
                                 type="button"
@@ -630,9 +455,15 @@
                 </article>
 
 
-                <!-- Product 2 -->
 
-                <article class="mp-product">
+                <!-- =================================================
+                     PRODUCT 2 - POTATO
+                ================================================== -->
+
+                <article
+                    class="mp-product"
+                    data-product="Potato"
+                >
 
                     <div class="mp-product-image">
 
@@ -643,6 +474,7 @@
                         <button
                             type="button"
                             class="mp-wishlist"
+                            aria-label="Add Potato to wishlist"
                         >
                             ♡
                         </button>
@@ -658,15 +490,57 @@
                             Potato
                         </div>
 
-                        <div class="mp-product-size">
-                            1 kg
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="250 g"
+                                data-price="10"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="500 g"
+                                data-price="20"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="1 kg"
+                                data-price="40"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Potato"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
-                                ₹40
+
+                                <span class="mp-current-price">
+                                    ₹40
+                                </span>
+
                             </div>
+
 
                             <button
                                 type="button"
@@ -682,15 +556,22 @@
                 </article>
 
 
-                <!-- Product 3 -->
 
-                <article class="mp-product">
+                <!-- =================================================
+                     PRODUCT 3 - AMUL MILK
+                ================================================== -->
+
+                <article
+                    class="mp-product"
+                    data-product="Amul Milk"
+                >
 
                     <div class="mp-product-image">
 
                         <button
                             type="button"
                             class="mp-wishlist"
+                            aria-label="Add Amul Milk to wishlist"
                         >
                             ♡
                         </button>
@@ -706,15 +587,57 @@
                             Amul Milk
                         </div>
 
-                        <div class="mp-product-size">
-                            500 ml
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="250 g"
+                                data-price="15"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="500 g"
+                                data-price="30"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="1 kg"
+                                data-price="60"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Amul Milk"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
-                                ₹30
+
+                                <span class="mp-current-price">
+                                    ₹30
+                                </span>
+
                             </div>
+
 
                             <button
                                 type="button"
@@ -730,9 +653,15 @@
                 </article>
 
 
-                <!-- Product 4 -->
 
-                <article class="mp-product">
+                <!-- =================================================
+                     PRODUCT 4 - PARLE-G BISCUITS
+                ================================================== -->
+
+                <article
+                    class="mp-product"
+                    data-product="Parle-G Biscuits"
+                >
 
                     <div class="mp-product-image">
 
@@ -743,6 +672,7 @@
                         <button
                             type="button"
                             class="mp-wishlist"
+                            aria-label="Add Parle-G Biscuits to wishlist"
                         >
                             ♡
                         </button>
@@ -758,15 +688,57 @@
                             Parle-G Biscuits
                         </div>
 
-                        <div class="mp-product-size">
-                            250 g
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="250 g"
+                                data-price="25"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="500 g"
+                                data-price="50"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="1 kg"
+                                data-price="100"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Parle-G Biscuits"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
-                                ₹25
+
+                                <span class="mp-current-price">
+                                    ₹25
+                                </span>
+
                             </div>
+
 
                             <button
                                 type="button"
@@ -782,15 +754,22 @@
                 </article>
 
 
-                <!-- Product 5 -->
 
-                <article class="mp-product">
+                <!-- =================================================
+                     PRODUCT 5 - COLD DRINK
+                ================================================== -->
+
+                <article
+                    class="mp-product"
+                    data-product="Cold Drink"
+                >
 
                     <div class="mp-product-image">
 
                         <button
                             type="button"
                             class="mp-wishlist"
+                            aria-label="Add Cold Drink to wishlist"
                         >
                             ♡
                         </button>
@@ -806,15 +785,57 @@
                             Cold Drink
                         </div>
 
-                        <div class="mp-product-size">
-                            750 ml
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="250 g"
+                                data-price="15"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="500 g"
+                                data-price="30"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="1 kg"
+                                data-price="60"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Cold Drink"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
-                                ₹45
+
+                                <span class="mp-current-price">
+                                    ₹60
+                                </span>
+
                             </div>
+
 
                             <button
                                 type="button"
@@ -830,9 +851,15 @@
                 </article>
 
 
-                <!-- Product 6 -->
 
-                <article class="mp-product">
+                <!-- =================================================
+                     PRODUCT 6 - TOOR DAL
+                ================================================== -->
+
+                <article
+                    class="mp-product"
+                    data-product="Toor Dal"
+                >
 
                     <div class="mp-product-image">
 
@@ -843,6 +870,7 @@
                         <button
                             type="button"
                             class="mp-wishlist"
+                            aria-label="Add Toor Dal to wishlist"
                         >
                             ♡
                         </button>
@@ -858,15 +886,57 @@
                             Toor Dal
                         </div>
 
-                        <div class="mp-product-size">
-                            1 kg
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="250 g"
+                                data-price="35"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="500 g"
+                                data-price="70"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="1 kg"
+                                data-price="140"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Toor Dal"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
-                                ₹145
+
+                                <span class="mp-current-price">
+                                    ₹140
+                                </span>
+
                             </div>
+
 
                             <button
                                 type="button"
@@ -887,12 +957,12 @@
         </section>
 
 
+
         <!-- =================================================
-             SNACKS
+             SNACKS & NAMKEEN
         ================================================== -->
 
         <section class="mp-product-section">
-
 
             <div class="mp-section-head">
 
@@ -913,11 +983,17 @@
             <div class="mp-products">
 
 
-                <article class="mp-product">
+                <!-- Potato Chips -->
+
+                <article
+                    class="mp-product"
+                    data-product="Potato Chips"
+                >
 
                     <div class="mp-product-image">
                         🍟
                     </div>
+
 
                     <div class="mp-product-info">
 
@@ -925,15 +1001,57 @@
                             Potato Chips
                         </div>
 
-                        <div class="mp-product-size">
-                            100 g
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="250 g"
+                                data-price="20"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="500 g"
+                                data-price="40"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="1 kg"
+                                data-price="80"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Potato Chips"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
-                                ₹20
+
+                                <span class="mp-current-price">
+                                    ₹20
+                                </span>
+
                             </div>
+
 
                             <button
                                 type="button"
@@ -949,11 +1067,18 @@
                 </article>
 
 
-                <article class="mp-product">
+
+                <!-- Bhakharwadi -->
+
+                <article
+                    class="mp-product"
+                    data-product="Bhakharwadi"
+                >
 
                     <div class="mp-product-image">
                         🥨
                     </div>
+
 
                     <div class="mp-product-info">
 
@@ -961,15 +1086,57 @@
                             Bhakharwadi
                         </div>
 
-                        <div class="mp-product-size">
-                            200 g
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="250 g"
+                                data-price="25"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="500 g"
+                                data-price="50"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="1 kg"
+                                data-price="100"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Bhakharwadi"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
-                                ₹45
+
+                                <span class="mp-current-price">
+                                    ₹25
+                                </span>
+
                             </div>
+
 
                             <button
                                 type="button"
@@ -985,11 +1152,18 @@
                 </article>
 
 
-                <article class="mp-product">
+
+                <!-- Parle-G -->
+
+                <article
+                    class="mp-product"
+                    data-product="Parle-G Biscuits"
+                >
 
                     <div class="mp-product-image">
                         🍪
                     </div>
+
 
                     <div class="mp-product-info">
 
@@ -997,15 +1171,57 @@
                             Parle-G Biscuits
                         </div>
 
-                        <div class="mp-product-size">
-                            250 g
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="250 g"
+                                data-price="25"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="500 g"
+                                data-price="50"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="1 kg"
+                                data-price="100"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Parle-G Biscuits"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
-                                ₹25
+
+                                <span class="mp-current-price">
+                                    ₹25
+                                </span>
+
                             </div>
+
 
                             <button
                                 type="button"
@@ -1021,11 +1237,18 @@
                 </article>
 
 
-                <article class="mp-product">
+
+                <!-- Chocolate -->
+
+                <article
+                    class="mp-product"
+                    data-product="Chocolate"
+                >
 
                     <div class="mp-product-image">
                         🍫
                     </div>
+
 
                     <div class="mp-product-info">
 
@@ -1033,15 +1256,57 @@
                             Chocolate
                         </div>
 
-                        <div class="mp-product-size">
-                            100 g
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="250 g"
+                                data-price="25"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="500 g"
+                                data-price="50"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="1 kg"
+                                data-price="100"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Chocolate"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
-                                ₹50
+
+                                <span class="mp-current-price">
+                                    ₹25
+                                </span>
+
                             </div>
+
 
                             <button
                                 type="button"
@@ -1057,11 +1322,18 @@
                 </article>
 
 
-                <article class="mp-product">
+
+                <!-- Popcorn -->
+
+                <article
+                    class="mp-product"
+                    data-product="Popcorn"
+                >
 
                     <div class="mp-product-image">
                         🍿
                     </div>
+
 
                     <div class="mp-product-info">
 
@@ -1069,15 +1341,57 @@
                             Popcorn
                         </div>
 
-                        <div class="mp-product-size">
-                            150 g
+
+                        <div class="mp-product-options">
+
+                            <button
+                                type="button"
+                                class="mp-size-option active"
+                                data-quantity="250 g"
+                                data-price="25"
+                            >
+                                250 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="500 g"
+                                data-price="50"
+                            >
+                                500 g
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option"
+                                data-quantity="1 kg"
+                                data-price="100"
+                            >
+                                1 kg
+                            </button>
+
+                            <button
+                                type="button"
+                                class="mp-size-option mp-custom-option"
+                                data-product="Popcorn"
+                            >
+                                Custom
+                            </button>
+
                         </div>
+
 
                         <div class="mp-product-bottom">
 
                             <div class="mp-price">
-                                ₹35
+
+                                <span class="mp-current-price">
+                                    ₹25
+                                </span>
+
                             </div>
+
 
                             <button
                                 type="button"
@@ -1096,6 +1410,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =================================================
@@ -1126,6 +1441,7 @@
 
 
     </main>
+
 
 
     <!-- =====================================================
@@ -1208,9 +1524,107 @@
     </nav>
 
 
+
+    <!-- =====================================================
+         CUSTOM QUANTITY MODAL
+    ====================================================== -->
+
+    <div
+        class="mp-custom-modal"
+        id="mpCustomModal"
+    >
+
+        <div class="mp-custom-modal-content">
+
+
+            <div class="mp-custom-modal-header">
+
+                <h3 class="mp-custom-modal-title">
+                    Custom Quantity
+                </h3>
+
+                <button
+                    type="button"
+                    class="mp-custom-modal-close"
+                    id="mpCustomClose"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                class="mp-custom-product-name"
+                id="mpCustomProductName"
+            >
+                Mamra Poha
+            </div>
+
+
+            <div class="mp-custom-field">
+
+                <label for="mpCustomQuantity">
+                    Quantity
+                </label>
+
+                <input
+                    type="text"
+                    id="mpCustomQuantity"
+                    placeholder="Example: 750 g"
+                >
+
+            </div>
+
+
+            <div class="mp-custom-field">
+
+                <label for="mpCustomPrice">
+                    Price
+                </label>
+
+                <input
+                    type="number"
+                    id="mpCustomPrice"
+                    placeholder="Enter price"
+                    min="0"
+                    step="0.01"
+                >
+
+            </div>
+
+
+            <div class="mp-custom-modal-actions">
+
+                <button
+                    type="button"
+                    class="mp-custom-cancel"
+                    id="mpCustomCancel"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="mp-custom-add"
+                    id="mpCustomAdd"
+                >
+                    Add
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
 </div>
 
 
+<!-- Main JavaScript -->
 <script src="script.js"></script>
 
 
