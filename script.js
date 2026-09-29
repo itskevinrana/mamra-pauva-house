@@ -383,3 +383,288 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    let currentProduct = null;
+    let currentBasePrice = 0;
+
+    const modal = document.getElementById("mpCustomModal");
+    const quantityInput = document.getElementById("mpCustomQuantity");
+    const priceInput = document.getElementById("mpCustomPrice");
+    const productName = document.getElementById("mpCustomProductName");
+
+    /* =========================================================
+       SIZE BUTTON + CUSTOM BUTTON
+    ========================================================= */
+
+    document.addEventListener("click", function (event) {
+
+        const sizeButton = event.target.closest(".mp-size-option");
+
+        if (!sizeButton) {
+            return;
+        }
+
+        const product = sizeButton.closest(".mp-product");
+
+        if (!product) {
+            return;
+        }
+
+        /* Custom button */
+        if (sizeButton.classList.contains("mp-custom-option")) {
+
+            currentProduct = product;
+
+            /*
+             * Get 1 KG price from the same product
+             */
+            const oneKgButton = product.querySelector(
+                '.mp-size-option[data-quantity="1 kg"]'
+            );
+
+            if (!oneKgButton) {
+                return;
+            }
+
+            currentBasePrice = parseFloat(
+                oneKgButton.dataset.price
+            );
+
+            /*
+             * Product name
+             */
+            productName.textContent =
+                product.dataset.product ||
+                product.querySelector(".mp-product-name").textContent.trim();
+
+            /*
+             * Reset inputs
+             */
+            quantityInput.value = "";
+            priceInput.value = "";
+
+            /*
+             * Open modal
+             */
+            modal.classList.add("active");
+            document.body.style.overflow = "hidden";
+
+            setTimeout(function () {
+                quantityInput.focus();
+            }, 100);
+
+            return;
+        }
+
+        /* Normal size button */
+
+        product.querySelectorAll(".mp-size-option").forEach(function (option) {
+            option.classList.remove("active");
+        });
+
+        sizeButton.classList.add("active");
+
+        const price = parseFloat(sizeButton.dataset.price);
+
+        const priceElement = product.querySelector(
+            ".mp-current-price"
+        );
+
+        if (priceElement && !isNaN(price)) {
+            priceElement.textContent = "₹" + price;
+        }
+    });
+
+
+    /* =========================================================
+       CUSTOM QUANTITY → AUTOMATIC PRICE
+       
+       Formula:
+       Price = Quantity in grams × (1 KG Price / 1000)
+    ========================================================= */
+
+    quantityInput.addEventListener("input", function () {
+
+        if (!currentBasePrice) {
+            priceInput.value = "";
+            return;
+        }
+
+        /*
+         * HTML input is text, so extract number from:
+         * 750
+         * 750 g
+         * 750g
+         */
+        const quantityText = this.value.trim();
+
+        const quantity = parseFloat(
+            quantityText.replace(/[^\d.]/g, "")
+        );
+
+        if (
+            isNaN(quantity) ||
+            quantity <= 0
+        ) {
+            priceInput.value = "";
+            return;
+        }
+
+        /*
+         * Calculate price according to 1 KG price
+         */
+        const calculatedPrice =
+            quantity * (currentBasePrice / 1000);
+
+        priceInput.value = calculatedPrice.toFixed(2);
+    });
+
+
+    /* =========================================================
+       CLOSE MODAL
+    ========================================================= */
+
+    function closeCustomModal() {
+
+        modal.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+        currentProduct = null;
+        currentBasePrice = 0;
+    }
+
+
+    document.getElementById("mpCustomClose")
+        .addEventListener("click", closeCustomModal);
+
+
+    document.getElementById("mpCustomCancel")
+        .addEventListener("click", closeCustomModal);
+
+
+    /* =========================================================
+       ADD CUSTOM QUANTITY
+    ========================================================= */
+
+    document.getElementById("mpCustomAdd")
+        .addEventListener("click", function () {
+
+            if (!currentProduct) {
+                return;
+            }
+
+            const quantityText = quantityInput.value.trim();
+
+            const quantity = parseFloat(
+                quantityText.replace(/[^\d.]/g, "")
+            );
+
+            const price = parseFloat(priceInput.value);
+
+            if (
+                isNaN(quantity) ||
+                quantity <= 0
+            ) {
+                alert("Please enter a valid quantity.");
+                quantityInput.focus();
+                return;
+            }
+
+            if (
+                isNaN(price) ||
+                price <= 0
+            ) {
+                alert("Invalid price.");
+                return;
+            }
+
+
+            /* -----------------------------------------
+               Custom button
+            ----------------------------------------- */
+
+            const customButton = currentProduct.querySelector(
+                ".mp-custom-option"
+            );
+
+            customButton.textContent =
+                quantity + " g";
+
+            customButton.dataset.quantity =
+                quantity + " g";
+
+            customButton.dataset.price =
+                price;
+
+            customButton.classList.add("active");
+
+
+            /* -----------------------------------------
+               Remove active from other sizes
+            ----------------------------------------- */
+
+            currentProduct
+                .querySelectorAll(".mp-size-option")
+                .forEach(function (option) {
+
+                    if (option !== customButton) {
+                        option.classList.remove("active");
+                    }
+
+                });
+
+
+            /* -----------------------------------------
+               Update product price
+            ----------------------------------------- */
+
+            const productPrice =
+                currentProduct.querySelector(
+                    ".mp-current-price"
+                );
+
+            if (productPrice) {
+
+                productPrice.textContent =
+                    "₹" + price.toFixed(2);
+
+            }
+
+
+            closeCustomModal();
+
+        });
+
+
+    /* =========================================================
+       CLOSE WHEN CLICKING OUTSIDE MODAL
+    ========================================================= */
+
+    modal.addEventListener("click", function (event) {
+
+        if (event.target === modal) {
+            closeCustomModal();
+        }
+
+    });
+
+
+    /* =========================================================
+       ESC KEY
+    ========================================================= */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (
+            event.key === "Escape" &&
+            modal.classList.contains("active")
+        ) {
+            closeCustomModal();
+        }
+
+    });
+
+});
