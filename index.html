@@ -78,10 +78,15 @@
             </div>
 
 
-            <div class="mp-store-logo">
+            <button
+                type="button"
+                class="mp-store-logo"
+                id="mpStoreLogo"
+                aria-label="Open admin login"
+            >
                 M<br>
                 PH
-            </div>
+            </button>
 
 
             <button
@@ -161,6 +166,76 @@
             </button>
 
         </div>
+
+    
+        <!-- =================================================
+             SPECIAL OFFERS
+             Controlled from Admin > Special Offers
+        ================================================== -->
+
+        <section
+            class="mp-special-offers"
+            id="mpSpecialOffers"
+            aria-label="Special Offers"
+            hidden
+        >
+
+            <div class="mp-special-offers-head">
+                <div>
+                    <span class="mp-special-offers-kicker">LIMITED TIME</span>
+                    <h2 class="mp-section-title">Special Offers</h2>
+                </div>
+
+                <span class="mp-special-offers-badge">
+                    <i class="fa-solid fa-bolt"></i>
+                    Today
+                </span>
+            </div>
+
+            <div class="mp-special-offers-list">
+
+                <a class="mp-special-offer-card" id="mpSpecialOffer1" href="#">
+                    <img
+                        class="mp-special-offer-image"
+                        id="mpSpecialOfferImage1"
+                        src="https://placehold.co/600x900/png?text=Special+Offer+1"
+                        alt="Special Offer 1"
+                    >
+                    <div class="mp-special-offer-overlay">
+                        <strong id="mpSpecialOfferTitle1">Fresh Grocery Offer</strong>
+                        <span id="mpSpecialOfferSub1">Save more on daily essentials</span>
+                    </div>
+                </a>
+
+                <a class="mp-special-offer-card" id="mpSpecialOffer2" href="#">
+                    <img
+                        class="mp-special-offer-image"
+                        id="mpSpecialOfferImage2"
+                        src="https://placehold.co/600x900/png?text=Special+Offer+2"
+                        alt="Special Offer 2"
+                    >
+                    <div class="mp-special-offer-overlay">
+                        <strong id="mpSpecialOfferTitle2">Weekend Savings</strong>
+                        <span id="mpSpecialOfferSub2">Special prices for you</span>
+                    </div>
+                </a>
+
+                <a class="mp-special-offer-card" id="mpSpecialOffer3" href="#">
+                    <img
+                        class="mp-special-offer-image"
+                        id="mpSpecialOfferImage3"
+                        src="https://placehold.co/600x900/png?text=Special+Offer+3"
+                        alt="Special Offer 3"
+                    >
+                    <div class="mp-special-offer-overlay">
+                        <strong id="mpSpecialOfferTitle3">Local Store Deals</strong>
+                        <span id="mpSpecialOfferSub3">Shop fresh. Save more.</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </section>
 
     </header>
 
@@ -2443,6 +2518,301 @@
 
     </div>
 
+
+
+    <!-- =================================================
+         ADMIN LOGIN / ADMIN PANEL
+         Opens when the store logo is clicked.
+    ================================================== -->
+
+    <section class="mp-admin-page" id="mpAdminPage" hidden>
+
+        <!-- Login -->
+        <div class="mp-admin-login" id="mpAdminLogin">
+
+            <div class="mp-admin-login-card">
+
+                <button
+                    type="button"
+                    class="mp-admin-back"
+                    id="mpAdminBack"
+                    aria-label="Back to store"
+                >
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+                <div class="mp-admin-brand">
+                    <div class="mp-admin-brand-logo">M<br>PH</div>
+                    <span>Mamra Pauva House</span>
+                </div>
+
+                <h1>Admin Login</h1>
+                <p>Sign in to manage your store special offers.</p>
+
+                <form id="mpAdminLoginForm">
+
+                    <label for="mpAdminUsername">Username</label>
+                    <input
+                        type="text"
+                        id="mpAdminUsername"
+                        autocomplete="username"
+                        placeholder="Enter username"
+                        required
+                    >
+
+                    <label for="mpAdminPassword">Password</label>
+                    <input
+                        type="password"
+                        id="mpAdminPassword"
+                        autocomplete="current-password"
+                        placeholder="Enter password"
+                        required
+                    >
+
+                    <div class="mp-admin-login-error" id="mpAdminLoginError"></div>
+
+                    <button type="submit" class="mp-admin-primary-button">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        Login
+                    </button>
+
+                </form>
+
+                <small class="mp-admin-demo-note">
+                    Demo login: <strong>admin</strong> / <strong>admin123</strong>
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Dashboard -->
+        <div class="mp-admin-dashboard" id="mpAdminDashboard" hidden>
+
+            <header class="mp-admin-topbar">
+
+                <div>
+                    <span class="mp-admin-eyebrow">MAMRA PAUVA HOUSE</span>
+                    <h1>Admin Panel</h1>
+                </div>
+
+                <button
+                    type="button"
+                    class="mp-admin-secondary-button"
+                    id="mpAdminLogout"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </button>
+
+            </header>
+
+
+            <main class="mp-admin-content">
+
+                <section class="mp-admin-panel">
+
+                    <div class="mp-admin-panel-head">
+
+                        <div>
+                            <span class="mp-admin-section-kicker">HOME PAGE</span>
+                            <h2>Special Offers</h2>
+                            <p>
+                                Enable this option to show three vertical offer images
+                                below the header search area on mobile.
+                            </p>
+                        </div>
+
+                        <label class="mp-admin-switch">
+                            <input
+                                type="checkbox"
+                                id="mpSpecialOfferEnabled"
+                            >
+                            <span class="mp-admin-switch-slider"></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="mp-admin-status" id="mpSpecialOfferStatus">
+                        Special offers are disabled.
+                    </div>
+
+
+                    <div class="mp-admin-offers">
+
+                        <article class="mp-admin-offer-editor">
+                            <div class="mp-admin-offer-number">01</div>
+
+                            <div class="mp-admin-offer-preview">
+                                <img
+                                    id="mpAdminPreview1"
+                                    src="https://placehold.co/600x900/png?text=Special+Offer+1"
+                                    alt="Offer 1 preview"
+                                >
+                            </div>
+
+                            <div class="mp-admin-offer-fields">
+
+                                <h3>Offer 1</h3>
+
+                                <label for="mpAdminImage1">Image URL</label>
+                                <input
+                                    type="url"
+                                    id="mpAdminImage1"
+                                    placeholder="https://example.com/offer-1.jpg"
+                                >
+
+                                <label for="mpAdminTitle1">Title</label>
+                                <input
+                                    type="text"
+                                    id="mpAdminTitle1"
+                                    placeholder="Fresh Grocery Offer"
+                                >
+
+                                <label for="mpAdminSub1">Subtitle</label>
+                                <input
+                                    type="text"
+                                    id="mpAdminSub1"
+                                    placeholder="Save more on daily essentials"
+                                >
+
+                                <label for="mpAdminLink1">Offer Link</label>
+                                <input
+                                    type="url"
+                                    id="mpAdminLink1"
+                                    placeholder="#"
+                                >
+
+                            </div>
+                        </article>
+
+
+                        <article class="mp-admin-offer-editor">
+                            <div class="mp-admin-offer-number">02</div>
+
+                            <div class="mp-admin-offer-preview">
+                                <img
+                                    id="mpAdminPreview2"
+                                    src="https://placehold.co/600x900/png?text=Special+Offer+2"
+                                    alt="Offer 2 preview"
+                                >
+                            </div>
+
+                            <div class="mp-admin-offer-fields">
+
+                                <h3>Offer 2</h3>
+
+                                <label for="mpAdminImage2">Image URL</label>
+                                <input
+                                    type="url"
+                                    id="mpAdminImage2"
+                                    placeholder="https://example.com/offer-2.jpg"
+                                >
+
+                                <label for="mpAdminTitle2">Title</label>
+                                <input
+                                    type="text"
+                                    id="mpAdminTitle2"
+                                    placeholder="Weekend Savings"
+                                >
+
+                                <label for="mpAdminSub2">Subtitle</label>
+                                <input
+                                    type="text"
+                                    id="mpAdminSub2"
+                                    placeholder="Special prices for you"
+                                >
+
+                                <label for="mpAdminLink2">Offer Link</label>
+                                <input
+                                    type="url"
+                                    id="mpAdminLink2"
+                                    placeholder="#"
+                                >
+
+                            </div>
+                        </article>
+
+
+                        <article class="mp-admin-offer-editor">
+                            <div class="mp-admin-offer-number">03</div>
+
+                            <div class="mp-admin-offer-preview">
+                                <img
+                                    id="mpAdminPreview3"
+                                    src="https://placehold.co/600x900/png?text=Special+Offer+3"
+                                    alt="Offer 3 preview"
+                                >
+                            </div>
+
+                            <div class="mp-admin-offer-fields">
+
+                                <h3>Offer 3</h3>
+
+                                <label for="mpAdminImage3">Image URL</label>
+                                <input
+                                    type="url"
+                                    id="mpAdminImage3"
+                                    placeholder="https://example.com/offer-3.jpg"
+                                >
+
+                                <label for="mpAdminTitle3">Title</label>
+                                <input
+                                    type="text"
+                                    id="mpAdminTitle3"
+                                    placeholder="Local Store Deals"
+                                >
+
+                                <label for="mpAdminSub3">Subtitle</label>
+                                <input
+                                    type="text"
+                                    id="mpAdminSub3"
+                                    placeholder="Shop fresh. Save more."
+                                >
+
+                                <label for="mpAdminLink3">Offer Link</label>
+                                <input
+                                    type="url"
+                                    id="mpAdminLink3"
+                                    placeholder="#"
+                                >
+
+                            </div>
+                        </article>
+
+                    </div>
+
+
+                    <div class="mp-admin-actions">
+
+                        <button
+                            type="button"
+                            class="mp-admin-secondary-button"
+                            id="mpAdminCancel"
+                        >
+                            Reset
+                        </button>
+
+                        <button
+                            type="button"
+                            class="mp-admin-primary-button"
+                            id="mpAdminSave"
+                        >
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Save Special Offers
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </section>
 
 </div>
 
