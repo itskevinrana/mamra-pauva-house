@@ -3396,3 +3396,615 @@ img {
         padding-right: 30px;
     }
 }
+
+/* =========================================================
+   SPECIAL OFFERS
+   Controlled by Admin Panel
+========================================================= */
+
+.mp-special-offers {
+    width: 100%;
+    margin-top: 18px;
+    padding: 0 16px 18px;
+}
+
+.mp-special-offers[hidden],
+.mp-admin-page[hidden],
+.mp-admin-dashboard[hidden],
+.mp-admin-login[hidden] {
+    display: none !important;
+}
+
+.mp-special-offers-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.mp-special-offers-kicker,
+.mp-admin-section-kicker,
+.mp-admin-eyebrow {
+    display: block;
+    color: var(--primary-light);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.mp-special-offers-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 9px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.12);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.mp-special-offers-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.mp-special-offer-card {
+    position: relative;
+    display: block;
+    min-width: 0;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #eee;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 7px 20px rgba(35,0,45,.14);
+}
+
+.mp-special-offer-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.mp-special-offer-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 42%,
+        rgba(0,0,0,.72) 100%
+    );
+    pointer-events: none;
+}
+
+.mp-special-offer-overlay {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 2;
+    color: #fff;
+}
+
+.mp-special-offer-overlay strong {
+    display: block;
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+.mp-special-offer-overlay span {
+    display: block;
+    margin-top: 3px;
+    font-size: 8px;
+    line-height: 1.35;
+    opacity: .88;
+}
+
+
+/* Logo is now a button */
+
+.mp-store-logo {
+    border: 2px solid rgba(255,255,255,.35);
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   ADMIN PAGE
+========================================================= */
+
+.mp-admin-page {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow-y: auto;
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(143,22,184,.16),
+            transparent 30%
+        ),
+        #f7f4f8;
+}
+
+.mp-admin-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.mp-admin-login-card {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    padding: 35px;
+    border-radius: 24px;
+    background: #fff;
+    border: 1px solid var(--purple-border);
+    box-shadow: 0 20px 60px rgba(66,0,93,.12);
+}
+
+.mp-admin-back {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--primary);
+}
+
+.mp-admin-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.mp-admin-brand-logo {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-size: 9px;
+    line-height: 1.05;
+    font-weight: 800;
+}
+
+.mp-admin-login-card h1 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 26px;
+}
+
+.mp-admin-login-card > p {
+    margin: 6px 0 24px;
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.mp-admin-login-card label,
+.mp-admin-offer-fields label {
+    display: block;
+    margin: 12px 0 6px;
+    color: var(--dark);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.mp-admin-login-card input,
+.mp-admin-offer-fields input {
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: 0;
+    background: #fff;
+    color: var(--dark);
+    font-size: 12px;
+}
+
+.mp-admin-login-card input:focus,
+.mp-admin-offer-fields input:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(143,22,184,.08);
+}
+
+.mp-admin-login-error {
+    min-height: 18px;
+    margin-top: 8px;
+    color: var(--red);
+    font-size: 11px;
+}
+
+.mp-admin-primary-button,
+.mp-admin-secondary-button {
+    min-height: 42px;
+    border-radius: 10px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.mp-admin-primary-button {
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: #fff;
+}
+
+.mp-admin-primary-button:hover {
+    background: var(--primary-dark);
+}
+
+.mp-admin-secondary-button {
+    border: 1px solid var(--purple-border);
+    background: #fff;
+    color: var(--primary);
+}
+
+.mp-admin-secondary-button:hover {
+    border-color: var(--primary-light);
+}
+
+.mp-admin-login-form {
+    width: 100%;
+}
+
+.mp-admin-login-card .mp-admin-primary-button {
+    width: 100%;
+    margin-top: 6px;
+}
+
+.mp-admin-demo-note {
+    display: block;
+    margin-top: 18px;
+    text-align: center;
+    color: #999;
+    font-size: 10px;
+}
+
+
+/* Dashboard */
+
+.mp-admin-dashboard {
+    min-height: 100vh;
+}
+
+.mp-admin-topbar {
+    min-height: 82px;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: linear-gradient(
+        180deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+    color: #fff;
+}
+
+.mp-admin-topbar h1 {
+    margin: 2px 0 0;
+    font-size: 23px;
+}
+
+.mp-admin-topbar .mp-admin-eyebrow {
+    color: rgba(255,255,255,.68);
+}
+
+.mp-admin-content {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px 24px 50px;
+}
+
+.mp-admin-panel {
+    padding: 25px;
+    border: 1px solid var(--purple-border);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 35px rgba(66,0,93,.07);
+}
+
+.mp-admin-panel-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.mp-admin-panel-head h2 {
+    margin: 4px 0 5px;
+    color: var(--dark);
+    font-size: 21px;
+}
+
+.mp-admin-panel-head p {
+    max-width: 700px;
+    margin: 0;
+    color: var(--gray);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.mp-admin-status {
+    margin: 20px 0;
+    padding: 11px 13px;
+    border-radius: 10px;
+    background: var(--purple-bg);
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.mp-admin-status.is-enabled {
+    background: #edf9f2;
+    color: var(--green);
+}
+
+.mp-admin-switch {
+    position: relative;
+    width: 54px;
+    height: 30px;
+    flex: 0 0 54px;
+    cursor: pointer;
+}
+
+.mp-admin-switch input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mp-admin-switch-slider {
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background: #d8d2da;
+    transition: .2s ease;
+}
+
+.mp-admin-switch-slider::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 4px;
+    left: 4px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+    transition: .2s ease;
+}
+
+.mp-admin-switch input:checked + .mp-admin-switch-slider {
+    background: var(--primary);
+}
+
+.mp-admin-switch input:checked + .mp-admin-switch-slider::before {
+    transform: translateX(24px);
+}
+
+.mp-admin-offers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.mp-admin-offer-editor {
+    position: relative;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: #fcfbfc;
+}
+
+.mp-admin-offer-number {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    color: var(--purple-border);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.mp-admin-offer-preview {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    max-height: 260px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--purple-bg);
+}
+
+.mp-admin-offer-preview img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.mp-admin-offer-fields h3 {
+    margin: 14px 0 4px;
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.mp-admin-actions {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+/* =========================================================
+   SPECIAL OFFERS RESPONSIVE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .mp-special-offers {
+        margin-top: 14px;
+        padding: 0 14px 14px;
+    }
+
+    .mp-special-offers-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .mp-special-offer-card {
+        aspect-ratio: 2 / 3;
+        border-radius: 10px;
+    }
+
+    .mp-special-offer-overlay {
+        left: 7px;
+        right: 7px;
+        bottom: 7px;
+    }
+
+    .mp-special-offer-overlay strong {
+        font-size: 8px;
+    }
+
+    .mp-special-offer-overlay span {
+        font-size: 6px;
+    }
+
+    .mp-special-offers-kicker {
+        font-size: 8px;
+    }
+
+    .mp-special-offers-badge {
+        padding: 5px 7px;
+        font-size: 8px;
+    }
+
+    .mp-admin-login {
+        padding: 14px;
+    }
+
+    .mp-admin-login-card {
+        padding: 30px 20px 24px;
+        border-radius: 18px;
+    }
+
+    .mp-admin-topbar {
+        padding: 14px 16px;
+    }
+
+    .mp-admin-topbar h1 {
+        font-size: 18px;
+    }
+
+    .mp-admin-topbar .mp-admin-secondary-button {
+        min-height: 36px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    .mp-admin-content {
+        padding: 16px 12px 30px;
+    }
+
+    .mp-admin-panel {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .mp-admin-panel-head {
+        gap: 12px;
+    }
+
+    .mp-admin-panel-head h2 {
+        font-size: 18px;
+    }
+
+    .mp-admin-offers {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .mp-admin-offer-editor {
+        display: grid;
+        grid-template-columns: 105px minmax(0, 1fr);
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .mp-admin-offer-number {
+        display: none;
+    }
+
+    .mp-admin-offer-preview {
+        grid-row: 1;
+        max-height: none;
+        align-self: start;
+    }
+
+    .mp-admin-offer-fields {
+        min-width: 0;
+    }
+
+    .mp-admin-offer-fields h3 {
+        margin-top: 0;
+    }
+
+    .mp-admin-offer-fields input {
+        height: 38px;
+        font-size: 10px;
+    }
+
+    .mp-admin-actions {
+        flex-direction: column-reverse;
+    }
+
+    .mp-admin-actions button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+
+    .mp-special-offers {
+        padding: 0 30px 20px;
+    }
+
+    .mp-admin-offers {
+        grid-template-columns: 1fr;
+    }
+}
