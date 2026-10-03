@@ -270,138 +270,162 @@
             </div>
 
 
-            <div class="mp-categories">
+              <!-- =================================================
+             CATEGORY NAVIGATION
+        ================================================== -->
+
+        <div
+            class="mp-category-nav"
+            id="categoryNav"
+        >
 
 
-                <a
-                    href="#"
-                    class="mp-category"
-                >
+            <!-- POHA -->
 
-                    <div class="mp-category-icon">
-                        🥦
-                    </div>
+            <a
+                href="category.html?category=poha"
+                data-category="poha"
+                class="active"
+            >
 
-                    <div class="mp-category-name">
-                        Vegetables
-                    </div>
+                <span>
+                    🍚
+                </span>
 
-                </a>
+                <span>
+                    Poha
+                </span>
 
-
-                <a
-                    href="#"
-                    class="mp-category"
-                >
-
-                    <div class="mp-category-icon">
-                        🍎
-                    </div>
-
-                    <div class="mp-category-name">
-                        Fruits
-                    </div>
-
-                </a>
+            </a>
 
 
-                <a
-                    href="#"
-                    class="mp-category"
-                >
+            <!-- RICE -->
 
-                    <div class="mp-category-icon">
-                        🥛
-                    </div>
+            <a
+                href="category.html?category=rice"
+                data-category="rice"
+            >
 
-                    <div class="mp-category-name">
-                        Dairy
-                    </div>
+                <span>
+                    🍚
+                </span>
 
-                </a>
+                <span>
+                    Rice
+                </span>
 
-
-                <a
-                    href="#"
-                    class="mp-category"
-                >
-
-                    <div class="mp-category-icon">
-                        🍪
-                    </div>
-
-                    <div class="mp-category-name">
-                        Biscuits
-                    </div>
-
-                </a>
+            </a>
 
 
-                <a
-                    href="#"
-                    class="mp-category"
-                >
+            <!-- DAL -->
 
-                    <div class="mp-category-icon">
-                        🥤
-                    </div>
+            <a
+                href="category.html?category=dal"
+                data-category="dal"
+            >
 
-                    <div class="mp-category-name">
-                        Beverages
-                    </div>
+                <span>
+                    🫘
+                </span>
 
-                </a>
+                <span>
+                    Dal
+                </span>
 
-
-                <a
-                    href="#"
-                    class="mp-category"
-                >
-
-                    <div class="mp-category-icon">
-                        🍿
-                    </div>
-
-                    <div class="mp-category-name">
-                        Snacks
-                    </div>
-
-                </a>
+            </a>
 
 
-                <a
-                    href="#"
-                    class="mp-category"
-                >
+            <!-- FLOUR -->
 
-                    <div class="mp-category-icon">
-                        🧴
-                    </div>
+            <a
+                href="category.html?category=flour"
+                data-category="flour"
+            >
 
-                    <div class="mp-category-name">
-                        Personal Care
-                    </div>
+                <span>
+                    🌾
+                </span>
 
-                </a>
+                <span>
+                    Flour
+                </span>
 
-
-                <a
-                    href="#"
-                    class="mp-category"
-                >
-
-                    <div class="mp-category-icon">
-                        🧹
-                    </div>
-
-                    <div class="mp-category-name">
-                        Household
-                    </div>
-
-                </a>
+            </a>
 
 
-            </div>
+            <!-- DAIRY -->
+
+            <a
+                href="category.html?category=dairy"
+                data-category="dairy"
+            >
+
+                <span>
+                    🥛
+                </span>
+
+                <span>
+                    Dairy
+                </span>
+
+            </a>
+
+
+            <!-- BISCUITS -->
+
+            <a
+                href="category.html?category=biscuits"
+                data-category="biscuits"
+            >
+
+                <span>
+                    🍪
+                </span>
+
+                <span>
+                    Biscuits
+                </span>
+
+            </a>
+
+
+            <!-- BEVERAGES -->
+
+            <a
+                href="category.html?category=beverages"
+                data-category="beverages"
+            >
+
+                <span>
+                    🥤
+                </span>
+
+                <span>
+                    Beverages
+                </span>
+
+            </a>
+
+
+            <!-- SNACKS -->
+
+            <a
+                href="category.html?category=snacks"
+                data-category="snacks"
+            >
+
+                <span>
+                    🍿
+                </span>
+
+                <span>
+                    Snacks
+                </span>
+
+            </a>
+
+
+        </div>
 
         </section>
 
@@ -2330,6 +2354,41 @@
 </footer>
 
     <!-- =====================================================
+         STICKY SEARCH ABOVE BOTTOM NAV
+         Visible on mobile/tablet after the header scrolls away
+    ====================================================== -->
+
+    <div class="mp-sticky-search" id="mpStickySearch">
+
+        <div class="mp-sticky-search-inner">
+
+            <div class="mp-search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    placeholder="Search Any Product..."
+                    id="mpStickySearchInput"
+                    aria-label="Search groceries"
+                >
+
+                <button
+                    type="button"
+                    id="mpStickySearchClear"
+                    aria-label="Clear search"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
          BOTTOM NAVIGATION
     ====================================================== -->
 
@@ -2351,7 +2410,7 @@
 
 
         <a
-            href="#"
+            href="./category.html"
             class="mp-nav-item"
         >
 
@@ -2393,7 +2452,7 @@
 
 
         <a
-            href="#"
+            href="account.html"
             class="mp-nav-item"
         >
 
