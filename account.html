@@ -42,10 +42,7 @@
 
     <!-- Main CSS -->
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -79,6 +76,7 @@
             </a>
 
 
+
             <!-- STORE INFORMATION -->
 
             <div class="mp-location">
@@ -88,10 +86,11 @@
                 </div>
 
                 <div class="mp-location-address">
-                    Dharmyug Society, Vyara, Gujarat
+                    Golwad, Vyara, Gujarat
                 </div>
 
             </div>
+
 
 
             <!-- STORE LOGO -->
@@ -106,6 +105,7 @@
                 PH
 
             </button>
+
 
 
             <!-- MENU -->
@@ -124,9 +124,8 @@
         </div>
 
 
-        <!-- =================================================
-             DELIVERY STRIP
-        ================================================== -->
+
+        <!-- DELIVERY STRIP -->
 
         <div class="mp-delivery-strip">
 
@@ -146,6 +145,7 @@
                 </span>
 
             </div>
+
 
 
             <div class="mp-delivery-item">
@@ -459,38 +459,303 @@
 
 
     <!-- =====================================================
-         STICKY SEARCH
+         FLOATING SEARCH
+         MOBILE + TABLET
     ====================================================== -->
 
     <div
-        class="mp-sticky-search"
-        id="mpStickySearch"
+        class="mp-floating-search"
+        id="mpFloatingSearch"
     >
 
-        <div class="mp-sticky-search-inner">
+        <button
+            type="button"
+            class="mp-floating-search-button"
+            id="mpFloatingSearchButton"
+            aria-label="Search products"
+        >
 
-            <div class="mp-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
 
-                <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
 
-                <input
-                    type="text"
-                    id="mpStickySearchInput"
-                    placeholder="Search Any Product..."
-                    aria-label="Search products"
-                >
+    </div>
+
+
+
+    <!-- =====================================================
+         FLOATING SEARCH OVERLAY
+    ====================================================== -->
+
+    <div
+        class="mp-floating-search-overlay"
+        id="mpFloatingSearchOverlay"
+    >
+
+        <div
+            class="mp-floating-search-panel"
+            id="mpFloatingSearchPanel"
+        >
+
+
+            <!-- SEARCH HEADER -->
+
+            <div class="mp-floating-search-header">
+
 
                 <button
                     type="button"
-                    id="mpStickySearchClear"
-                    aria-label="Clear search"
+                    class="mp-floating-search-back"
+                    id="mpFloatingSearchClose"
+                    aria-label="Close search"
                 >
 
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-arrow-left"></i>
 
                 </button>
 
+
+
+                <div class="mp-floating-search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                    <input
+                        type="text"
+                        id="mpFloatingSearchInput"
+                        placeholder="Search Any Product..."
+                        autocomplete="off"
+                        aria-label="Search products"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="mp-floating-search-clear"
+                        id="mpFloatingSearchClear"
+                        aria-label="Clear search"
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+
             </div>
+
+
+
+            <!-- SEARCH CONTENT -->
+
+            <div class="mp-floating-search-content">
+
+
+                <!-- RECENT SEARCHES -->
+
+                <section
+                    class="mp-search-suggestion-section"
+                    id="mpRecentSearchSection"
+                >
+
+
+                    <div class="mp-search-suggestion-heading">
+
+                        <h3>
+                            Recent Searches
+                        </h3>
+
+
+                        <button
+                            type="button"
+                            id="mpClearRecentSearch"
+                        >
+                            Clear
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="mp-recent-search-list"
+                        id="mpRecentSearchList"
+                    ></div>
+
+
+                </section>
+
+
+
+                <!-- POPULAR CATEGORIES -->
+
+                <section class="mp-search-suggestion-section">
+
+
+                    <div class="mp-search-suggestion-heading">
+
+                        <h3>
+                            Popular Categories
+                        </h3>
+
+                    </div>
+
+
+
+                    <div class="mp-search-category-list">
+
+
+                        <button
+                            type="button"
+                            class="mp-search-category"
+                            data-search="Poha"
+                        >
+
+                            <span class="mp-search-category-icon">
+                                🍚
+                            </span>
+
+                            <span>
+                                Poha
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            class="mp-search-category"
+                            data-search="Dals"
+                        >
+
+                            <span class="mp-search-category-icon">
+                                🫘
+                            </span>
+
+                            <span>
+                                Dals
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            class="mp-search-category"
+                            data-search="Biscuits"
+                        >
+
+                            <span class="mp-search-category-icon">
+                                🍪
+                            </span>
+
+                            <span>
+                                Biscuits
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            class="mp-search-category"
+                            data-search="Snacks"
+                        >
+
+                            <span class="mp-search-category-icon">
+                                🍿
+                            </span>
+
+                            <span>
+                                Snacks
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            class="mp-search-category"
+                            data-search="Milk"
+                        >
+
+                            <span class="mp-search-category-icon">
+                                🥛
+                            </span>
+
+                            <span>
+                                Milk
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            class="mp-search-category"
+                            data-search="Cold Drinks"
+                        >
+
+                            <span class="mp-search-category-icon">
+                                🥤
+                            </span>
+
+                            <span>
+                                Cold Drinks
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            class="mp-search-category"
+                            data-search="Chocolates"
+                        >
+
+                            <span class="mp-search-category-icon">
+                                🍫
+                            </span>
+
+                            <span>
+                                Chocolates
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            class="mp-search-category"
+                            data-search="Grocery"
+                        >
+
+                            <span class="mp-search-category-icon">
+                                🛒
+                            </span>
+
+                            <span>
+                                Grocery
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
 
         </div>
 
@@ -500,7 +765,6 @@
 
     <!-- =====================================================
          BOTTOM NAVIGATION
-         SAME AS HOME PAGE
     ====================================================== -->
 
     <nav class="mp-bottom-nav">
@@ -605,5 +869,4 @@
 
 
 </body>
-
 </html>
