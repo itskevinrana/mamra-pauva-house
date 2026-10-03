@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cart | Mamra Pauva House</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+<div class="mp-page">
+
+    <!-- HEADER -->
+    <header class="mp-header">
+
+        <div class="mp-header-top">
+
+            <div class="mp-location">
+
+                <div class="mp-location-title">
+                    Mamra Pauva House
+                </div>
+
+                <div class="mp-location-address">
+                    Dharmyug Society, Vyara, Gujarat
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="mp-store-logo"
+                onclick="window.location.href='index.html'"
+            >
+                M<br>
+                PH
+            </button>
+
+            <button
+                type="button"
+                class="mp-menu"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CART -->
+    <main class="mp-cart-page">
+
+        <div class="mp-cart-header">
+
+            <div>
+                <span class="mp-page-kicker">
+                    YOUR SHOPPING
+                </span>
+
+                <h1>
+                    My Cart
+                </h1>
+            </div>
+
+            <span
+                class="mp-cart-items-count"
+                id="mpCartItemsCount"
+            >
+                0 items
+            </span>
+
+        </div>
+
+
+        <!-- CART ITEMS -->
+
+        <div
+            class="mp-cart-items"
+            id="mpCartItems"
+        >
+        </div>
+
+
+        <!-- EMPTY CART -->
+
+        <div
+            class="mp-cart-empty"
+            id="mpCartEmpty"
+            hidden
+        >
+
+            <div class="mp-cart-empty-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+            <h2>
+                Your cart is empty
+            </h2>
+
+            <p>
+                Add some groceries to your cart and they will appear here.
+            </p>
+
+            <a
+                href="index.html"
+                class="mp-cart-shop-button"
+            >
+                Continue Shopping
+            </a>
+
+        </div>
+
+
+        <!-- CART SUMMARY -->
+
+        <div
+            class="mp-cart-summary"
+            id="mpCartSummary"
+        >
+
+            <div class="mp-cart-summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="mpCartSubtotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="mp-cart-summary-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong id="mpCartDelivery">
+                    FREE
+                </strong>
+
+            </div>
+
+
+            <div class="mp-cart-summary-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="mpCartTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="mp-cart-checkout"
+            >
+                <span>
+                    Proceed to Checkout
+                </span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- BOTTOM NAV -->
+<nav class="mp-bottom-nav">
+
+
+        <a
+            href="./index.html"
+            class="mp-nav-item active"
+        >
+
+            <div class="mp-nav-icon">
+                🏠
+            </div>
+
+            Home
+
+        </a>
+
+
+        <a
+            href="./category.html"
+            class="mp-nav-item"
+        >
+
+            <div class="mp-nav-icon">
+                🛍️
+            </div>
+
+            Categories
+
+        </a>
+
+
+        <a
+            href="cart.html"
+            class="mp-nav-item"
+        >
+
+            <div class="mp-nav-icon">
+                🛒
+            </div>
+
+            Cart
+
+        </a>
+
+
+        <a
+            href="#"
+            class="mp-nav-item"
+        >
+
+            <div class="mp-nav-icon">
+                📦
+            </div>
+
+            Orders
+
+        </a>
+
+
+        <a
+            href="./account.html"
+            class="mp-nav-item"
+        >
+
+            <div class="mp-nav-icon">
+                👤
+            </div>
+
+            Account
+
+        </a>
+
+
+    </nav>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
