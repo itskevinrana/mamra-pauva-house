@@ -270,162 +270,138 @@
             </div>
 
 
-              <!-- =================================================
-             CATEGORY NAVIGATION
-        ================================================== -->
-
-        <div
-            class="mp-category-nav"
-            id="categoryNav"
-        >
+            <div class="mp-categories">
 
 
-            <!-- POHA -->
+                <a
+                    href="category.html?category=vegetables"
+                    class="mp-category"
+                >
 
-            <a
-                href="category.html?category=poha"
-                data-category="poha"
-                class="active"
-            >
+                    <div class="mp-category-icon">
+                        🥦
+                    </div>
 
-                <span>
-                    🍚
-                </span>
+                    <div class="mp-category-name">
+                        Vegetables
+                    </div>
 
-                <span>
-                    Poha
-                </span>
-
-            </a>
+                </a>
 
 
-            <!-- RICE -->
+                <a
+                    href="category.html?category=fruits"
+                    class="mp-category"
+                >
 
-            <a
-                href="category.html?category=rice"
-                data-category="rice"
-            >
+                    <div class="mp-category-icon">
+                        🍎
+                    </div>
 
-                <span>
-                    🍚
-                </span>
+                    <div class="mp-category-name">
+                        Fruits
+                    </div>
 
-                <span>
-                    Rice
-                </span>
-
-            </a>
+                </a>
 
 
-            <!-- DAL -->
+                <a
+                    href="category.html?category=dairy"
+                    class="mp-category"
+                >
 
-            <a
-                href="category.html?category=dal"
-                data-category="dal"
-            >
+                    <div class="mp-category-icon">
+                        🥛
+                    </div>
 
-                <span>
-                    🫘
-                </span>
+                    <div class="mp-category-name">
+                        Dairy
+                    </div>
 
-                <span>
-                    Dal
-                </span>
-
-            </a>
+                </a>
 
 
-            <!-- FLOUR -->
+                <a
+                    href="category.html?category=biscuits"
+                    class="mp-category"
+                >
 
-            <a
-                href="category.html?category=flour"
-                data-category="flour"
-            >
+                    <div class="mp-category-icon">
+                        🍪
+                    </div>
 
-                <span>
-                    🌾
-                </span>
+                    <div class="mp-category-name">
+                        Biscuits
+                    </div>
 
-                <span>
-                    Flour
-                </span>
-
-            </a>
+                </a>
 
 
-            <!-- DAIRY -->
+                <a
+                    href="category.html?category=beverages"
+                    class="mp-category"
+                >
 
-            <a
-                href="category.html?category=dairy"
-                data-category="dairy"
-            >
+                    <div class="mp-category-icon">
+                        🥤
+                    </div>
 
-                <span>
-                    🥛
-                </span>
+                    <div class="mp-category-name">
+                        Beverages
+                    </div>
 
-                <span>
-                    Dairy
-                </span>
-
-            </a>
+                </a>
 
 
-            <!-- BISCUITS -->
+                <a
+                    href="category.html?category=snacks"
+                    class="mp-category"
+                >
 
-            <a
-                href="category.html?category=biscuits"
-                data-category="biscuits"
-            >
+                    <div class="mp-category-icon">
+                        🍿
+                    </div>
 
-                <span>
-                    🍪
-                </span>
+                    <div class="mp-category-name">
+                        Snacks
+                    </div>
 
-                <span>
-                    Biscuits
-                </span>
-
-            </a>
+                </a>
 
 
-            <!-- BEVERAGES -->
+                <a
+                    href="category.html?category=personal-care"
+                    class="mp-category"
+                >
 
-            <a
-                href="category.html?category=beverages"
-                data-category="beverages"
-            >
+                    <div class="mp-category-icon">
+                        🧴
+                    </div>
 
-                <span>
-                    🥤
-                </span>
+                    <div class="mp-category-name">
+                        Personal Care
+                    </div>
 
-                <span>
-                    Beverages
-                </span>
-
-            </a>
+                </a>
 
 
-            <!-- SNACKS -->
+                <a
+                    href="category.html?category=household"
+                    class="mp-category"
+                >
 
-            <a
-                href="category.html?category=snacks"
-                data-category="snacks"
-            >
+                    <div class="mp-category-icon">
+                        🧹
+                    </div>
 
-                <span>
-                    🍿
-                </span>
+                    <div class="mp-category-name">
+                        Household
+                    </div>
 
-                <span>
-                    Snacks
-                </span>
-
-            </a>
+                </a>
 
 
-        </div>
+            </div>
 
         </section>
 
@@ -2354,32 +2330,151 @@
 </footer>
 
     <!-- =====================================================
-         STICKY SEARCH ABOVE BOTTOM NAV
-         Visible on mobile/tablet after the header scrolls away
+         MESSENGER STYLE FLOATING SEARCH
     ====================================================== -->
 
-    <div class="mp-sticky-search" id="mpStickySearch">
+    <div
+        class="mp-floating-search"
+        id="mpFloatingSearch"
+    >
 
-        <div class="mp-sticky-search-inner">
+        <button
+            type="button"
+            class="mp-floating-search-button"
+            id="mpFloatingSearchButton"
+            aria-label="Search products"
+        >
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
 
-            <div class="mp-search-box">
+    </div>
 
-                <i class="fa-solid fa-magnifying-glass"></i>
 
-                <input
-                    type="text"
-                    placeholder="Search Any Product..."
-                    id="mpStickySearchInput"
-                    aria-label="Search groceries"
-                >
+    <!-- =====================================================
+         SEARCH OVERLAY
+    ====================================================== -->
+
+    <div
+        class="mp-floating-search-overlay"
+        id="mpFloatingSearchOverlay"
+    >
+
+        <div
+            class="mp-floating-search-panel"
+            id="mpFloatingSearchPanel"
+        >
+
+            <div class="mp-floating-search-header">
 
                 <button
                     type="button"
-                    id="mpStickySearchClear"
-                    aria-label="Clear search"
+                    class="mp-floating-search-back"
+                    id="mpFloatingSearchClose"
+                    aria-label="Close search"
                 >
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-arrow-left"></i>
                 </button>
+
+                <div class="mp-floating-search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="mpFloatingSearchInput"
+                        placeholder="Search Any Product..."
+                        autocomplete="off"
+                        aria-label="Search products"
+                    >
+
+                    <button
+                        type="button"
+                        class="mp-floating-search-clear"
+                        id="mpFloatingSearchClear"
+                        aria-label="Clear search"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="mp-floating-search-content">
+
+                <section
+                    class="mp-search-suggestion-section"
+                    id="mpRecentSearchSection"
+                >
+
+                    <div class="mp-search-suggestion-heading">
+                        <h3>Recent Searches</h3>
+                        <button
+                            type="button"
+                            id="mpClearRecentSearch"
+                        >Clear</button>
+                    </div>
+
+                    <div
+                        class="mp-recent-search-list"
+                        id="mpRecentSearchList"
+                    ></div>
+
+                </section>
+
+
+                <section class="mp-search-suggestion-section">
+
+                    <div class="mp-search-suggestion-heading">
+                        <h3>Popular Categories</h3>
+                    </div>
+
+                    <div class="mp-search-category-list">
+
+                        <button type="button" class="mp-search-category" data-search="Poha">
+                            <span class="mp-search-category-icon">🍚</span>
+                            <span>Poha</span>
+                        </button>
+
+                        <button type="button" class="mp-search-category" data-search="Dals">
+                            <span class="mp-search-category-icon">🫘</span>
+                            <span>Dals</span>
+                        </button>
+
+                        <button type="button" class="mp-search-category" data-search="Biscuits">
+                            <span class="mp-search-category-icon">🍪</span>
+                            <span>Biscuits</span>
+                        </button>
+
+                        <button type="button" class="mp-search-category" data-search="Snacks">
+                            <span class="mp-search-category-icon">🍿</span>
+                            <span>Snacks</span>
+                        </button>
+
+                        <button type="button" class="mp-search-category" data-search="Milk">
+                            <span class="mp-search-category-icon">🥛</span>
+                            <span>Milk</span>
+                        </button>
+
+                        <button type="button" class="mp-search-category" data-search="Cold Drinks">
+                            <span class="mp-search-category-icon">🥤</span>
+                            <span>Cold Drinks</span>
+                        </button>
+
+                        <button type="button" class="mp-search-category" data-search="Chocolates">
+                            <span class="mp-search-category-icon">🍫</span>
+                            <span>Chocolates</span>
+                        </button>
+
+                        <button type="button" class="mp-search-category" data-search="Grocery">
+                            <span class="mp-search-category-icon">🛒</span>
+                            <span>Grocery</span>
+                        </button>
+
+                    </div>
+
+                </section>
 
             </div>
 
@@ -2388,15 +2483,11 @@
     </div>
 
 
-    <!-- =====================================================
-         BOTTOM NAVIGATION
-    ====================================================== -->
-
     <nav class="mp-bottom-nav">
 
 
         <a
-            href="#"
+            href="./index.html"
             class="mp-nav-item active"
         >
 
@@ -2452,7 +2543,7 @@
 
 
         <a
-            href="account.html"
+            href="./account.html"
             class="mp-nav-item"
         >
 
