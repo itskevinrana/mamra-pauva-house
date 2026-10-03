@@ -2237,3 +2237,1111 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const navItems = document.querySelectorAll(
+        ".mp-bottom-nav .mp-nav-item"
+    );
+
+    if (!navItems.length) return;
+
+    const currentPage =
+        window.location.pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
+
+    navItems.forEach(function (item) {
+
+        const href = item.getAttribute("href");
+
+        if (!href || href === "#") return;
+
+        const linkPage =
+            href
+                .split("/")
+                .pop()
+                .split("?")[0]
+                .toLowerCase();
+
+        item.classList.remove("active");
+
+        if (
+            (currentPage === "index.html" && linkPage === "index.html") ||
+            (currentPage === "category.html" && linkPage === "category.html") ||
+            (currentPage === "account.html" && linkPage === "account.html")
+        ) {
+            item.classList.add("active");
+        }
+
+    });
+
+});
+
+/* =========================================================
+   MESSENGER STYLE DRAGGABLE SEARCH
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const floatingSearch =
+        document.getElementById("mpFloatingSearch");
+
+    const searchButton =
+        document.getElementById("mpFloatingSearchButton");
+
+    const searchPanel =
+        document.getElementById("mpFloatingSearchPanel");
+
+    const searchInput =
+        document.getElementById("mpFloatingSearchInput");
+
+    const searchClose =
+        document.getElementById("mpFloatingSearchClose");
+
+    if (
+        !floatingSearch ||
+        !searchButton
+    ) {
+        return;
+    }
+
+
+    /* =====================================================
+       DEFAULT POSITION
+    ===================================================== */
+
+    const STORAGE_KEY =
+        "mpFloatingSearchPosition";
+
+    const BUTTON_SIZE = 54;
+
+    let position = {
+        right: 14,
+        bottom: 82
+    };
+
+
+    /* =====================================================
+       LOAD SAVED POSITION
+    ===================================================== */
+
+    try {
+
+        const savedPosition =
+            localStorage.getItem(STORAGE_KEY);
+
+        if (savedPosition) {
+
+            const saved =
+                JSON.parse(savedPosition);
+
+            if (
+                typeof saved.right === "number" &&
+                typeof saved.bottom === "number"
+            ) {
+                position = saved;
+            }
+
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "Unable to load floating search position.",
+            error
+        );
+
+    }
+
+
+    /* =====================================================
+       APPLY POSITION
+    ===================================================== */
+
+    function applyPosition() {
+
+        const maxRight =
+            window.innerWidth - BUTTON_SIZE - 5;
+
+        const maxBottom =
+            window.innerHeight - BUTTON_SIZE - 5;
+
+        position.right =
+            Math.max(
+                5,
+                Math.min(
+                    position.right,
+                    maxRight
+                )
+            );
+
+        position.bottom =
+            Math.max(
+                70,
+                Math.min(
+                    position.bottom,
+                    maxBottom
+                )
+            );
+
+        floatingSearch.style.right =
+            position.right + "px";
+
+        floatingSearch.style.bottom =
+            position.bottom + "px";
+    }
+
+
+    applyPosition();
+
+
+    /* =====================================================
+       DRAG VARIABLES
+    ===================================================== */
+
+    let isDragging = false;
+
+    let startX = 0;
+    let startY = 0;
+
+    let startRight = 0;
+    let startBottom = 0;
+
+    let moved = false;
+
+
+    /* =====================================================
+       POINTER DOWN
+    ===================================================== */
+
+    searchButton.addEventListener(
+        "pointerdown",
+        function (event) {
+
+            if (window.innerWidth > 1024) {
+                return;
+            }
+
+            isDragging = true;
+            moved = false;
+
+            startX = event.clientX;
+            startY = event.clientY;
+
+            startRight = position.right;
+            startBottom = position.bottom;
+
+            searchButton.setPointerCapture(
+                event.pointerId
+            );
+
+            searchButton.style.cursor =
+                "grabbing";
+
+            event.preventDefault();
+
+        }
+    );
+
+
+    /* =====================================================
+       POINTER MOVE
+    ===================================================== */
+
+    searchButton.addEventListener(
+        "pointermove",
+        function (event) {
+
+            if (!isDragging) {
+                return;
+            }
+
+            const deltaX =
+                event.clientX - startX;
+
+            const deltaY =
+                event.clientY - startY;
+
+
+            if (
+                Math.abs(deltaX) > 5 ||
+                Math.abs(deltaY) > 5
+            ) {
+                moved = true;
+            }
+
+
+            position.right =
+                startRight - deltaX;
+
+            position.bottom =
+                startBottom - deltaY;
+
+
+            applyPosition();
+
+            event.preventDefault();
+
+        }
+    );
+
+
+    /* =====================================================
+       POINTER UP
+    ===================================================== */
+
+    searchButton.addEventListener(
+        "pointerup",
+        function () {
+
+            if (!isDragging) {
+                return;
+            }
+
+            isDragging = false;
+
+            searchButton.style.cursor =
+                "grab";
+
+
+            /* Save position */
+
+            try {
+
+                localStorage.setItem(
+                    STORAGE_KEY,
+                    JSON.stringify(position)
+                );
+
+            } catch (error) {
+
+                console.warn(
+                    "Unable to save floating search position.",
+                    error
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       OPEN SEARCH
+    ===================================================== */
+
+    searchButton.addEventListener(
+        "click",
+        function () {
+
+            /*
+             * If user dragged the button,
+             * don't open search.
+             */
+
+            if (moved) {
+
+                moved = false;
+
+                return;
+            }
+
+
+            searchPanel.classList.add(
+                "is-open"
+            );
+
+
+            setTimeout(
+                function () {
+
+                    if (searchInput) {
+                        searchInput.focus();
+                    }
+
+                },
+                100
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       CLOSE SEARCH
+    ===================================================== */
+
+    if (searchClose) {
+
+        searchClose.addEventListener(
+            "click",
+            function () {
+
+                searchPanel.classList.remove(
+                    "is-open"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ESCAPE
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                searchPanel.classList.remove(
+                    "is-open"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       RESIZE
+    ===================================================== */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth > 1024) {
+
+                searchPanel.classList.remove(
+                    "is-open"
+                );
+
+            }
+
+            applyPosition();
+
+        }
+    );
+
+});
+
+/* =========================================================
+   MESSENGER STYLE FLOATING SEARCH
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const floatingSearch =
+        document.getElementById("mpFloatingSearch");
+
+    const searchButton =
+        document.getElementById("mpFloatingSearchButton");
+
+    const searchOverlay =
+        document.getElementById("mpFloatingSearchOverlay");
+
+    const searchPanel =
+        document.getElementById("mpFloatingSearchPanel");
+
+    const searchInput =
+        document.getElementById("mpFloatingSearchInput");
+
+    const searchClose =
+        document.getElementById("mpFloatingSearchClose");
+
+    const searchClear =
+        document.getElementById("mpFloatingSearchClear");
+
+    const recentList =
+        document.getElementById("mpRecentSearchList");
+
+    const recentSection =
+        document.getElementById("mpRecentSearchSection");
+
+    const clearRecent =
+        document.getElementById("mpClearRecentSearch");
+
+
+    if (
+        !floatingSearch ||
+        !searchButton ||
+        !searchOverlay ||
+        !searchPanel ||
+        !searchInput
+    ) {
+        return;
+    }
+
+
+    /* =====================================================
+       POSITION
+    ===================================================== */
+
+    const POSITION_KEY =
+        "mpFloatingSearchPosition";
+
+    const BUTTON_SIZE = 54;
+
+    let position = {
+        right: 14,
+        bottom: 82
+    };
+
+
+    try {
+
+        const savedPosition =
+            localStorage.getItem(POSITION_KEY);
+
+        if (savedPosition) {
+
+            const saved =
+                JSON.parse(savedPosition);
+
+            if (
+                typeof saved.right === "number" &&
+                typeof saved.bottom === "number"
+            ) {
+                position = saved;
+            }
+
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "Unable to load search position.",
+            error
+        );
+
+    }
+
+
+    function applyPosition() {
+
+        const maxRight =
+            window.innerWidth -
+            BUTTON_SIZE -
+            5;
+
+        const maxBottom =
+            window.innerHeight -
+            BUTTON_SIZE -
+            5;
+
+
+        position.right =
+            Math.max(
+                5,
+                Math.min(
+                    position.right,
+                    maxRight
+                )
+            );
+
+
+        position.bottom =
+            Math.max(
+                70,
+                Math.min(
+                    position.bottom,
+                    maxBottom
+                )
+            );
+
+
+        floatingSearch.style.right =
+            position.right + "px";
+
+
+        floatingSearch.style.bottom =
+            position.bottom + "px";
+
+    }
+
+
+    applyPosition();
+
+
+    /* =====================================================
+       DRAG
+    ===================================================== */
+
+    let isDragging = false;
+
+    let moved = false;
+
+    let startX = 0;
+    let startY = 0;
+
+    let startRight = 0;
+    let startBottom = 0;
+
+
+    searchButton.addEventListener(
+        "pointerdown",
+        function (event) {
+
+            if (window.innerWidth > 1024) {
+                return;
+            }
+
+            isDragging = true;
+            moved = false;
+
+            startX = event.clientX;
+            startY = event.clientY;
+
+            startRight = position.right;
+            startBottom = position.bottom;
+
+            searchButton.setPointerCapture(
+                event.pointerId
+            );
+
+            event.preventDefault();
+
+        }
+    );
+
+
+    searchButton.addEventListener(
+        "pointermove",
+        function (event) {
+
+            if (!isDragging) {
+                return;
+            }
+
+
+            const deltaX =
+                event.clientX - startX;
+
+            const deltaY =
+                event.clientY - startY;
+
+
+            if (
+                Math.abs(deltaX) > 5 ||
+                Math.abs(deltaY) > 5
+            ) {
+
+                moved = true;
+
+            }
+
+
+            position.right =
+                startRight - deltaX;
+
+            position.bottom =
+                startBottom - deltaY;
+
+
+            applyPosition();
+
+            event.preventDefault();
+
+        }
+    );
+
+
+    searchButton.addEventListener(
+        "pointerup",
+        function () {
+
+            if (!isDragging) {
+                return;
+            }
+
+
+            isDragging = false;
+
+
+            try {
+
+                localStorage.setItem(
+                    POSITION_KEY,
+                    JSON.stringify(position)
+                );
+
+            } catch (error) {
+
+                console.warn(
+                    "Unable to save search position.",
+                    error
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       RECENT SEARCHES
+    ===================================================== */
+
+    const RECENT_KEY =
+        "mpRecentSearches";
+
+    const MAX_RECENT =
+        6;
+
+
+    function getRecentSearches() {
+
+        try {
+
+            const saved =
+                localStorage.getItem(
+                    RECENT_KEY
+                );
+
+            if (!saved) {
+                return [];
+            }
+
+            const searches =
+                JSON.parse(saved);
+
+            return Array.isArray(searches)
+                ? searches
+                : [];
+
+        } catch (error) {
+
+            return [];
+
+        }
+
+    }
+
+
+    function saveRecentSearch(value) {
+
+        value =
+            value.trim();
+
+        if (!value) {
+            return;
+        }
+
+
+        let searches =
+            getRecentSearches();
+
+
+        searches =
+            searches.filter(
+                function (item) {
+
+                    return item.toLowerCase() !==
+                        value.toLowerCase();
+
+                }
+            );
+
+
+        searches.unshift(value);
+
+
+        searches =
+            searches.slice(
+                0,
+                MAX_RECENT
+            );
+
+
+        localStorage.setItem(
+            RECENT_KEY,
+            JSON.stringify(searches)
+        );
+
+
+        renderRecentSearches();
+
+    }
+
+
+    function renderRecentSearches() {
+
+        if (!recentList) {
+            return;
+        }
+
+
+        const searches =
+            getRecentSearches();
+
+
+        recentList.innerHTML = "";
+
+
+        if (!searches.length) {
+
+            recentList.innerHTML =
+                '<span class="mp-recent-search-empty">' +
+                'Your recent searches will appear here.' +
+                '</span>';
+
+            return;
+
+        }
+
+
+        searches.forEach(
+            function (search) {
+
+                const button =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                button.type =
+                    "button";
+
+
+                button.className =
+                    "mp-recent-search-item";
+
+
+                button.innerHTML =
+                    '<i class="fa-solid fa-clock-rotate-left"></i>' +
+                    '<span></span>';
+
+
+                button
+                    .querySelector("span")
+                    .textContent = search;
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        searchInput.value =
+                            search;
+
+                        updateClearButton();
+
+                        searchInput.focus();
+
+                    }
+                );
+
+
+                recentList.appendChild(
+                    button
+                );
+
+            }
+        );
+
+    }
+
+
+    renderRecentSearches();
+
+
+    /* =====================================================
+       OPEN SEARCH
+    ===================================================== */
+
+    function openSearch() {
+
+        searchOverlay.classList.add(
+            "is-open"
+        );
+
+        document.body.classList.add(
+            "mp-search-open"
+        );
+
+
+        setTimeout(
+            function () {
+
+                searchInput.focus();
+
+            },
+            250
+        );
+
+    }
+
+
+    /* =====================================================
+       CLOSE SEARCH
+    ===================================================== */
+
+    function closeSearch() {
+
+        searchOverlay.classList.remove(
+            "is-open"
+        );
+
+        document.body.classList.remove(
+            "mp-search-open"
+        );
+
+    }
+
+
+    searchButton.addEventListener(
+        "click",
+        function () {
+
+            if (moved) {
+
+                moved = false;
+
+                return;
+
+            }
+
+            openSearch();
+
+        }
+    );
+
+
+    if (searchClose) {
+
+        searchClose.addEventListener(
+            "click",
+            closeSearch
+        );
+
+    }
+
+
+    /* =====================================================
+       CLICK OVERLAY
+    ===================================================== */
+
+    searchOverlay.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target ===
+                searchOverlay
+            ) {
+
+                closeSearch();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       CLEAR INPUT
+    ===================================================== */
+
+    function updateClearButton() {
+
+        if (!searchClear) {
+            return;
+        }
+
+
+        if (
+            searchInput.value.trim()
+        ) {
+
+            searchClear.classList.add(
+                "is-visible"
+            );
+
+        } else {
+
+            searchClear.classList.remove(
+                "is-visible"
+            );
+
+        }
+
+    }
+
+
+    searchInput.addEventListener(
+        "input",
+        updateClearButton
+    );
+
+
+    if (searchClear) {
+
+        searchClear.addEventListener(
+            "click",
+            function () {
+
+                searchInput.value = "";
+
+                updateClearButton();
+
+                searchInput.focus();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SAVE SEARCH WHEN USER PRESSES ENTER
+    ===================================================== */
+
+    searchInput.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key !== "Enter"
+            ) {
+                return;
+            }
+
+
+            const value =
+                searchInput.value.trim();
+
+
+            if (!value) {
+                return;
+            }
+
+
+            saveRecentSearch(value);
+
+            /*
+             * Your existing product-search
+             * functionality can be connected here.
+             */
+
+            searchInput.blur();
+
+        }
+    );
+
+
+    /* =====================================================
+       CLEAR ALL RECENT SEARCHES
+    ===================================================== */
+
+    if (clearRecent) {
+
+        clearRecent.addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    RECENT_KEY
+                );
+
+                renderRecentSearches();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CATEGORY CLICK
+    ===================================================== */
+
+    const categoryButtons =
+        document.querySelectorAll(
+            ".mp-search-category"
+        );
+
+
+    categoryButtons.forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const value =
+                        button.getAttribute(
+                            "data-search"
+                        );
+
+
+                    if (!value) {
+                        return;
+                    }
+
+
+                    searchInput.value =
+                        value;
+
+
+                    saveRecentSearch(
+                        value
+                    );
+
+
+                    updateClearButton();
+
+                    searchInput.focus();
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       ESCAPE
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                searchOverlay.classList.contains(
+                    "is-open"
+                )
+            ) {
+
+                closeSearch();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       PREVENT BACKGROUND SCROLL
+    ===================================================== */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            applyPosition();
+
+        }
+    );
+
+});
