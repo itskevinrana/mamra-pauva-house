@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Account | Mamra Pauva House</title>
+
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="mp-page">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="mp-header">
+
+
+        <div class="mp-header-top">
+
+
+            <!-- BACK -->
+
+            <a
+                href="index.html"
+                class="mp-back"
+                aria-label="Go back"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+            </a>
+
+
+            <!-- STORE INFORMATION -->
+
+            <div class="mp-location">
+
+                <div class="mp-location-title">
+                    Mamra Pauva House
+                </div>
+
+                <div class="mp-location-address">
+                    Dharmyug Society, Vyara, Gujarat
+                </div>
+
+            </div>
+
+
+            <!-- STORE LOGO -->
+
+            <button
+                type="button"
+                class="mp-store-logo"
+                aria-label="Mamra Pauva House"
+            >
+
+                M<br>
+                PH
+
+            </button>
+
+
+            <!-- MENU -->
+
+            <button
+                type="button"
+                class="mp-menu"
+                aria-label="Open menu"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+        </div>
+
+
+        <!-- =================================================
+             DELIVERY STRIP
+        ================================================== -->
+
+        <div class="mp-delivery-strip">
+
+
+            <div class="mp-delivery-item">
+
+                <strong>
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    20 mins
+
+                </strong>
+
+                <span>
+                    Fast Delivery
+                </span>
+
+            </div>
+
+
+            <div class="mp-delivery-item">
+
+                <strong>
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                    FREE
+
+                </strong>
+
+                <span>
+                    Delivery above ₹299
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         ACCOUNT PAGE
+    ====================================================== -->
+
+    <main class="mp-account-page">
+
+
+        <!-- ACCOUNT HEADING -->
+
+        <div class="mp-account-header">
+
+            <span class="mp-page-kicker">
+                MY ACCOUNT
+            </span>
+
+            <h1>
+                Account
+            </h1>
+
+            <p>
+                Manage your personal and delivery details.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ACCOUNT DETAILS
+        ================================================== -->
+
+        <section class="mp-account-card">
+
+
+            <!-- PROFILE -->
+
+            <div class="mp-account-profile">
+
+
+                <div class="mp-account-avatar">
+                    KR
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Kevin Rana
+                    </h2>
+
+                    <span>
+                        Customer
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ACCOUNT FORM -->
+
+            <form
+                class="mp-account-form"
+                id="mpAccountForm"
+            >
+
+
+                <!-- MOBILE NUMBER -->
+
+                <div class="mp-account-field">
+
+                    <label for="accountMobile">
+                        Mobile Number
+                    </label>
+
+
+                    <div class="mp-account-input">
+
+                        <i class="fa-solid fa-phone"></i>
+
+
+                        <input
+                            type="tel"
+                            id="accountMobile"
+                            name="mobile"
+                            value="7096144255"
+                            maxlength="10"
+                            placeholder="Enter mobile number"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FULL NAME -->
+
+                <div class="mp-account-field">
+
+                    <label for="accountName">
+                        Full Name
+                    </label>
+
+
+                    <div class="mp-account-input">
+
+                        <i class="fa-solid fa-user"></i>
+
+
+                        <input
+                            type="text"
+                            id="accountName"
+                            name="name"
+                            value="Kevin Rana"
+                            placeholder="Enter full name"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ADDRESS -->
+
+                <div class="mp-account-field">
+
+                    <label for="accountAddress">
+                        Address
+                    </label>
+
+
+                    <div class="mp-account-input mp-account-textarea">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+
+                        <textarea
+                            id="accountAddress"
+                            name="address"
+                            rows="3"
+                            placeholder="Enter delivery address"
+                        >Surat, Udhana</textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SAVE BUTTON -->
+
+                <button
+                    type="submit"
+                    class="mp-account-save"
+                >
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save Details
+
+                </button>
+
+
+            </form>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ACCOUNT OPTIONS
+        ================================================== -->
+
+        <section class="mp-account-options">
+
+
+            <!-- ORDERS -->
+
+            <a
+                href="#"
+                class="mp-account-option"
+            >
+
+                <span class="mp-account-option-icon">
+
+                    <i class="fa-solid fa-box"></i>
+
+                </span>
+
+
+                <span class="mp-account-option-content">
+
+                    <strong>
+                        My Orders
+                    </strong>
+
+                    <small>
+                        View your previous orders
+                    </small>
+
+                </span>
+
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </a>
+
+
+
+            <!-- DELIVERY ADDRESS -->
+
+            <a
+                href="#"
+                class="mp-account-option"
+            >
+
+                <span class="mp-account-option-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </span>
+
+
+                <span class="mp-account-option-content">
+
+                    <strong>
+                        Delivery Address
+                    </strong>
+
+                    <small>
+                        Manage your delivery address
+                    </small>
+
+                </span>
+
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </a>
+
+
+
+            <!-- HELP -->
+
+            <a
+                href="#"
+                class="mp-account-option"
+            >
+
+                <span class="mp-account-option-icon">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                </span>
+
+
+                <span class="mp-account-option-content">
+
+                    <strong>
+                        Help &amp; Support
+                    </strong>
+
+                    <small>
+                        Need help with your order?
+                    </small>
+
+                </span>
+
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         STICKY SEARCH
+    ====================================================== -->
+
+    <div
+        class="mp-sticky-search"
+        id="mpStickySearch"
+    >
+
+        <div class="mp-sticky-search-inner">
+
+            <div class="mp-search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="mpStickySearchInput"
+                    placeholder="Search Any Product..."
+                    aria-label="Search products"
+                >
+
+                <button
+                    type="button"
+                    id="mpStickySearchClear"
+                    aria-label="Clear search"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         BOTTOM NAVIGATION
+         SAME AS HOME PAGE
+    ====================================================== -->
+
+    <nav class="mp-bottom-nav">
+
+
+        <!-- HOME -->
+
+        <a
+            href="./index.html"
+            class="mp-nav-item"
+        >
+
+            <div class="mp-nav-icon">
+                🏠
+            </div>
+
+            Home
+
+        </a>
+
+
+
+        <!-- CATEGORIES -->
+
+        <a
+            href="./category.html"
+            class="mp-nav-item"
+        >
+
+            <div class="mp-nav-icon">
+                🛍️
+            </div>
+
+            Categories
+
+        </a>
+
+
+
+        <!-- CART -->
+
+        <a
+            href="#"
+            class="mp-nav-item"
+        >
+
+            <div class="mp-nav-icon">
+                🛒
+            </div>
+
+            Cart
+
+        </a>
+
+
+
+        <!-- ORDERS -->
+
+        <a
+            href="#"
+            class="mp-nav-item"
+        >
+
+            <div class="mp-nav-icon">
+                📦
+            </div>
+
+            Orders
+
+        </a>
+
+
+
+        <!-- ACCOUNT -->
+
+        <a
+            href="./account.html"
+            class="mp-nav-item active"
+        >
+
+            <div class="mp-nav-icon">
+                👤
+            </div>
+
+            Account
+
+        </a>
+
+
+    </nav>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN SCRIPT
+====================================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
